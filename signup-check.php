@@ -2,8 +2,8 @@
 session_start(); 
 include "db_conn.php";
 
-if (isset($_POST['uname']) && isset($_POST['password'])
-    && isset($_POST['name']) && isset($_POST['re_password'])) {
+if (isset($_POST['username']) && isset($_POST['password'])
+    && isset($_POST['name']) && isset($_POST['repeat_password'])) {
 
 	function validate($data){
        $data = trim($data);
@@ -12,13 +12,13 @@ if (isset($_POST['uname']) && isset($_POST['password'])
 	   return $data;
 	}
 
-	$uname = validate($_POST['uname']);
+	$uname = validate($_POST['username']);
 	$pass = validate($_POST['password']);
 
-	$re_pass = validate($_POST['re_password']);
+	$re_pass = validate($_POST['repeat_password']);
 	$name = validate($_POST['name']);
 
-	$user_data = 'uname='. $uname. '&name='. $name;
+	$user_data = 'username='. $uname. '&name='. $name;
 
 
 	if (empty($uname)) {
